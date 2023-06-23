@@ -3,26 +3,29 @@ import './App.css'
 import Shopping from './components/Shopping'
 import Cart from './components/Cart'
 import HomePage from './components/HomePage'
+import data from './data'
+import { useState } from 'react'
 
 function App() {
-
+  const [products, setProducts] = useState(data)
 
   return (
     <div className="App">
-      <h1>Hola</h1>
+      <h1>Store</h1>
+      <Link to='/'>Home</Link>
+      <br/>
       <Link to='/shopping'>Shopping</Link>
       <br/>
       <Link to='/cart'>Cart</Link>
-      <br/>
-      <Link to='/home'>Home</Link>
 
       <Routes>
-        <Route path='/shopping' element={<Shopping/>}/>
-        <Route path='/cart' element={<Cart/>}/>
-        <Route path='/home' element={<HomePage/>}/>
+        <Route path='/' element={<HomePage/>}/>
+        <Route path='/shopping' element={<Shopping products={products} setProducts={setProducts}/>}/>
+        <Route path='/cart' element={<Cart
+        products={products} setProducts={setProducts}/>}/>
       </Routes>
     </div>
-  );
+  )
 }
 
 export default App;
