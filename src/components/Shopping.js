@@ -13,7 +13,7 @@ const Shopping = ({ products, setProducts }) => {
             {products.map(p => (
                 <div key={p.name} className="product">
                     <p>{p.name}</p>
-                    <p>{p.price}</p>
+                    <p>{p.price} $</p>
                     <p>{p.isInCart + "1"}</p>
                     <button onClick={() => onClickButton(p)}>Add to Cart</button>
                 </div>

@@ -5,3 +5,14 @@
 .product{
   border: 1px solid green;
 }
+
+.plus-minus-sign{
+  font-size: 1.8rem;
+  color: grey;
+  cursor: pointer;
+  padding: .2rem;
+}
+
+.plus-minus-sign:hover{
+  background-color: lightgrey;
+}
